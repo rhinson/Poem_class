@@ -25,10 +25,10 @@ class Poem():
 
     def get_PoemText(self):
         """ Returns the text of the Poem object """
-        return self.text if self.text else "No Text Yet"
+        return self.text if self.text else "No Text Yet\n"
 
     def set_PoemText(self, poem_text, haiku=False):
-        """ Sets the text of the Poem object """
+        """ Sets the text and optional haiku of the Poem object """
         self.text = poem_text
         self.haiku = haiku
 
@@ -51,20 +51,25 @@ class Poem():
             "\nText: " + self.text + "\n"
 
 
-poem_1 = Poem("Roger", "My Poem")
-poem_2 = Poem("Jennifer", "Her Poem", "My day is like a winter's night\nCold and dark\nBut short lived\n", False)
-poem_3 = Poem("Wolf", "His Poem", "A teacher by night\nA developer by day\nI'm taught by Wolf\n", True)
+if __name__ == "__main__":
 
-poem_1.set_PoemText("I like to read\nA lot\nI like to read\n")
-poem_1.set_haiku(False)
+    poem_1 = Poem("Roger", "My Poem")
+    poem_2 = Poem("Bob", "Another Poem")
+    poem_3 = Poem("Jennifer", "Her Poem", "My day is like a winter's night\nCold and dark\nBut short lived\n", True)
+    poem_4 = Poem("Wolf", "His Poem", "A teacher by night\nA developer by day\nI am taught by Wolf\n", True)
 
-print(poem_1)
-print(poem_2)
-print(poem_3)
+    poem_1.set_PoemText("I like to read\nA lot\nI like to read\n")
+    poem_3.set_haiku(False)
 
-print(poem_1.get_PoemText())
-print(poem_2.get_PoemText())
-print(poem_3.get_PoemText())
+    print(poem_1)
+    print(poem_2)
+    print(poem_3)
+    print(poem_4)
 
-print("There are %d poems" % Poem.poem_count())
+    print(poem_1.get_PoemText())
+    print(poem_2.get_PoemText())
+    print(poem_3.get_PoemText())
+    print(poem_4.get_PoemText())
+
+    print("There are %d poems" % Poem.poem_count())
 
